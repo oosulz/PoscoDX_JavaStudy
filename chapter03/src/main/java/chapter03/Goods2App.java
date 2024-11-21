@@ -1,7 +1,5 @@
 package chapter03;
 
-import mypackage.Goods2;
-
 public class Goods2App {
 	public static void main(String[] args) {
 		Goods2 goods2 = new Goods2();
@@ -12,6 +10,17 @@ public class Goods2App {
 		goods2.setCountStock(20);
 		
 		goods2.printInfo();
+		
+		//정보은닉(객체의 상태를 보호)
+		goods2.setPrice(-1000);
+		
+		Goods2 goods2_1 = new Goods2();
+		System.out.println(goods2_1.countOfGoods);
+		Goods2 goods2_2 = new Goods2();
+		System.out.println(goods2_2.countOfGoods);
+		
+		goods2.setPrice(400000);
+		System.out.println(goods2.calcDiscountPrice(0.5f));
 
 	}
 
