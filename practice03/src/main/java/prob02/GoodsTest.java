@@ -1,6 +1,6 @@
 package prob02;
 
-import java.awt.font.NumericShaper.Range;
+
 import java.util.Scanner;
 
 public class GoodsTest {

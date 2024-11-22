@@ -1,6 +1,5 @@
 package chapter03;
 
-import chapter03.Value;
 
 public class SwapTest03 {
 	public static void main(String[] args) {

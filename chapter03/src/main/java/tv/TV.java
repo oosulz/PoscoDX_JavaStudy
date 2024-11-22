@@ -1,7 +1,5 @@
 package tv;
 
-import java.nio.channels.Channel;
-
 public class TV {
 
 	private int channel;
