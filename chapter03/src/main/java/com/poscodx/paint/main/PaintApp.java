@@ -61,9 +61,7 @@ public class PaintApp {
 		drawable.draw();
 	}
 	
-	
 	/*
-	 
 	public static void drawShape(Shape shape) {
 		shape.draw();
 	}
@@ -81,5 +79,4 @@ public class PaintApp {
 	//public static void drawColorPoint(ColorPoint colorPoint) {
 	//	colorPoint.show();
 	//}
-
 }
