@@ -19,7 +19,7 @@ public class MyStack {
 	}
 
 	public String pop() throws MyStackException {
-        if (top < 0) { // 스택이 비었는지 확인
+        if (top < 0) {
             throw new MyStackException();
         }
 		String tmpString = buffer[top];
