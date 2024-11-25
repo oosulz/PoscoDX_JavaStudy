@@ -1,11 +1,12 @@
 package prob04;
 
-public class MyStackTest {
+//제네릭
+public class MyStackTest03 {
 
 	public static void main(String[] args) {
 		try {
-			MyStack stack = new MyStack(3);
-			stack.push("Hello");
+			MyStack03<String> stack= new MyStack03<String>(3);
+			stack.push("Hello stack3");
 			stack.push("World");
 			stack.push("!!!");
 			stack.push("java");
@@ -18,7 +19,7 @@ public class MyStackTest {
 
 			System.out.println("======================================");
 
-			stack = new MyStack(3);
+			stack = new MyStack03<String>(3);
 			stack.push("Hello");
 
 			System.out.println(stack.pop());

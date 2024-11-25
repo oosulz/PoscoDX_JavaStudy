@@ -5,7 +5,7 @@
     <artifactId>java-study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>chapter04</artifactId>
+  <artifactId>designparrtern-practices</artifactId>
   
   <properties>
   	<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
@@ -14,14 +14,8 @@
   </properties>
   
   <build>
-  	<finalName>chapter04</finalName>
+  	<finalName>designparrtern-practices</finalName>
   </build>
   
-  <packaging>
-  pom</packaging>
-  
-  
-  <modules>
-  	<module>designpattern-practices</module>
-  </modules>
+
 </project>
