@@ -51,9 +51,5 @@ public class Money {
 	}
 
 	
-
-
-
-	
 	/* 코드 작성 */
 }
