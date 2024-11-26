@@ -6,6 +6,7 @@ public class ConcreteComponent extends Component {
 	
 	public ConcreteComponent(String text) {
 		this.text = text;
+		System.out.println("ConcreteComponent");
 	}
 
 	@Override

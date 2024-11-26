@@ -2,10 +2,9 @@ package structural.decorator;
 
 public class BraceDecorator extends Decorator {
 
-	
-	
 	public BraceDecorator(Component component) {
 		super(component);
+		System.out.println("BraceDecorator");
 		
 	}
 

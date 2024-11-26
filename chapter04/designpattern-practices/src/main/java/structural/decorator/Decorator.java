@@ -5,6 +5,7 @@ public abstract class Decorator extends Component{
 	
 	public Decorator(Component component) {
 		this.component = component;
+		System.out.println("Decorator");
 	}
 	
 
