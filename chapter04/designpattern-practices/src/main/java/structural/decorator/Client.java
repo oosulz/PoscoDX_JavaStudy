@@ -11,7 +11,7 @@ public class Client {
 		Component c2 = new ParenthesesDecorator(c1);
 		Component c3 = new BraceDecorator(c2);
 		
-		System.out.println(c3.operation());
+		System.out.println(c3.operation()); // operation 연산 내에 component.operation()로 상속 객체 참조
 		
         //System.out.println(new BraceDecorator(new ParenthesesDecorator(new ConcreteComponent("Hello World"))).operation());
 		
