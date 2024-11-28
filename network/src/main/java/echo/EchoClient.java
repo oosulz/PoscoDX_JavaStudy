@@ -26,8 +26,7 @@ public class EchoClient {
 
 			// 2. 서버 연결
 			socket.connect(new InetSocketAddress(SERVER_IP, EchoServer.PORT));
-			
-			
+		
 			
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(),"utf-8"), true); //autoFlush == true
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(),"utf-8")); //Flush가 없어도 돼
@@ -41,6 +40,7 @@ public class EchoClient {
 				}
 				
 				pw.println(line);
+				
 				String data = br.readLine();
 				
 				if (data == null) {
