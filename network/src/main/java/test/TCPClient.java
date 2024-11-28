@@ -1,8 +1,12 @@
 package test;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
@@ -19,6 +23,9 @@ public class TCPClient {
 			
 			// 2. 서버 연결
 			socket.connect(new InetSocketAddress("127.0.0.1", 60000));
+			
+			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(),"utf-8"), true); //autoFlush == true
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(),"utf-8")); //Flush가 없어도 돼
 			
 			//3. IO Stream 받아오기
 			InputStream iStream = socket.getInputStream();
