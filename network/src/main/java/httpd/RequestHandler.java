@@ -31,6 +31,7 @@ public class RequestHandler extends Thread {
 																												// 없어도 돼
 
 			String request = null;
+			
 			while (true) {
 				String line = br.readLine();
 
@@ -54,6 +55,7 @@ public class RequestHandler extends Thread {
 			} else {
 				// methods: POST, DELETE , PUT , HEAD , CONNECT, ...
 				// SimpleHttpServer에서는 무시(400 bad request)
+				response400Error(outputStream, tokens[2]);
 			}
 
 		} catch (Exception ex) {
@@ -81,7 +83,8 @@ public class RequestHandler extends Thread {
 
 		File file = new File("./webapp" + url);
 		if (!file.exists()) {
-			// 404 response (과제)
+			response404Error(os, protocol); // 404 응답
+			// 404 에러
 			return;
 		}
 
@@ -104,4 +107,19 @@ public class RequestHandler extends Thread {
 	public void consoleLog(String message) {
 		System.out.println("[RequestHandler#" + getId() + "] " + message);
 	}
+
+	private void response404Error(OutputStream os, String protocol) {
+		/*
+		 * HTTP/1.1 404 File not Found\n Content-Type: text/html; charset=utf-8\n \n
+		 */
+
+	}
+	
+	private void response400Error(OutputStream os, String protocol) {
+		/*
+		 * HTTP/1.1 400 Bad Request\n Content-Type: text/html; charset=utf-8\n \n
+		 */
+
+	}
+
 }
