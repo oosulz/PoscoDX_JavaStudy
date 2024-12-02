@@ -31,7 +31,6 @@ public class ChatClient {
 			socket.connect(new InetSocketAddress(SERVER_IP, ChatServer.PORT));
 
 			// 3. reader/writer 생성
-
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "utf-8"), true);
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "utf-8"));
 			String nickname = "";

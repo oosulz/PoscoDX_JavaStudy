@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ChatServer {
 
-	public static final int PORT = 9981;
+	public static final int PORT = 9998;
 
 	public static void main(String[] args) {
 
