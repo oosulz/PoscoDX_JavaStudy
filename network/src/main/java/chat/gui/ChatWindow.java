@@ -95,7 +95,7 @@ public class ChatWindow {
 		// Frame
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				System.exit(0);
+				finish();
 			}
 		});
 
@@ -174,9 +174,6 @@ public class ChatWindow {
 	}
 
 	private void serverConnect() {
-
-		// 5. 통신은 항상 보내고 받아야함
-		// 6. 서버는 받았으면 보내야함
 
 		try {
 			// 1. 서버 연결 작업
