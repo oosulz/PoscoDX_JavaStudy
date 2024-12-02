@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
+import java.net.SocketTimeoutException;
 
 public class TCPClient {
 
@@ -20,6 +21,27 @@ public class TCPClient {
 			
 			// 1. 소켓 생성
 			socket = new Socket();
+			
+			// 1-1. 소켓 버퍼 사이즈
+			int rcvBufferSize = socket.getReceiveBufferSize();
+			int sndBufferSize = socket.getSendBufferSize();
+			System.out.println(rcvBufferSize + " " + sndBufferSize);
+			
+			//버퍼 사이즈를 조정할 수는 있지만, 먼저 조절하는 편은 아니다.
+			
+			// 1.2 소켓 버퍼 사이즈 변경
+			socket.setReceiveBufferSize(1024 * 10);
+			socket.setSendBufferSize(1024 * 10);
+
+			
+			System.out.println(socket.getReceiveBufferSize() + " " + socket.getSendBufferSize());
+			
+			// 1-3. SO_NODELAY(Nagle Algorithm OFF)
+			socket.setTcpNoDelay(true);
+			
+			// 1-4. SO_TIMEOUT
+			socket.setSoTimeout(3000);
+			
 			
 			// 2. 서버 연결
 			socket.connect(new InetSocketAddress("127.0.0.1", 60000));
@@ -46,7 +68,8 @@ public class TCPClient {
 			
 			data = new String(buffer, 0, readByteCount, "utf-8");
 			System.out.println("[client] received:" + data);
-			
+		} catch (SocketTimeoutException e) {
+			System.out.println("[server] Socket TimeOut Exception : " + e);	
 		} catch (SocketException e) {
 			System.out.println("[server] Socket Exception : " + e);	
 		} catch (IOException e) {
