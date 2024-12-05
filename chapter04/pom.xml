@@ -19,9 +19,5 @@
   
   <packaging>
   pom</packaging>
-  
-  
-  <modules>
-  	<module>designpattern-practices</module>
-  </modules>
+ 
 </project>
