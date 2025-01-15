@@ -7,7 +7,7 @@ public class ChatClientApp {
 		String name = null;
 		String nickname = "";
 		Scanner scanner = new Scanner(System.in);
-
+		
 		while(true) {
 			
 			System.out.println("대화명을 입력하세요.");
@@ -22,6 +22,7 @@ public class ChatClientApp {
 			if (name.isEmpty() == false && !"".equals(nickname) ) {
 				break;
 			}
+			
 			
 			else if (name.isEmpty()) {
 				System.out.println("대화명은 한글자 이상 입력해야 합니다.\n");
